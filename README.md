@@ -51,7 +51,7 @@ Here are some example CURL commands to interact with the API:
 
 ### Checkout a Tool
 ```bash
-curl -X POST http://localhost:8080/checkout \
+curl -X POST http://localhost:8090/checkout \
 -H 'Content-Type: application/json' \
 -d '{
 "toolCode": "JAKR",
@@ -59,3 +59,7 @@ curl -X POST http://localhost:8080/checkout \
 "discountPercent": 20,
 "checkoutDate": "2022-07-15"
 }'
+
+
+### Get All tools
+curl --location 'http://localhost:8090/tools'

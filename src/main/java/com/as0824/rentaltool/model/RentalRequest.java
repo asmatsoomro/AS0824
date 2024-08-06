@@ -1,11 +1,19 @@
 package com.as0824.rentaltool.model;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDate;
 
 public class RentalRequest {
+
+    @NotNull(message = "Tool code is required field")
     private String toolCode;
+
     private int rentalDays;
+
     private int discountPercent;
+
+    @NotNull(message = "checkoutDate is a required field")
     private LocalDate checkoutDate;
 
     public String getToolCode() {

@@ -7,6 +7,7 @@ import com.as0824.rentaltool.exception.RentalDayCountException;
 import com.as0824.rentaltool.model.RentalRequest;
 import com.as0824.rentaltool.service.RentalService;
 import com.as0824.rentaltool.service.ToolService;
+import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,14 +30,14 @@ public class RentalController {
 
 
     @PostMapping("/checkout")
-    public ResponseEntity<RentalAgreement> checkout(@RequestBody RentalRequest request) {
+    public ResponseEntity<RentalAgreement> checkout(@RequestBody @Valid RentalRequest request) {
         if (request.getRentalDays() <= 0) {
             throw new RentalDayCountException("Rental day count must be greater than 0");
         }
         if (request.getDiscountPercent() < 0 || request.getDiscountPercent() > 100) {
             throw new DiscountPercentageException("Discount percent must be between 0% and 100%");
         }
-
+        
         RentalAgreement agreement = rentalService.checkout(request);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(agreement);
     }
