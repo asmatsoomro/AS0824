@@ -42,9 +42,10 @@ The `RentalController` manages rental transactions and tool management within th
 4. Navigate to the root directory of the project:
 5. Run the application using Gradle:
     ./gradlew bootRun
-   Alternatively, you can build the project and run the JAR file:
+   
+6. Alternatively, you can build the project and run the JAR file:
    gradle build
-   java -jar build/libs/<generated-jar-file>.jar
+   java -jar build/libs/AS0824-0.0.1-SNAPSHOT.jar
 
 ## Usage Examples
 Here are some example CURL commands to interact with the API:
