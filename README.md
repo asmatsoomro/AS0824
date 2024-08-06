@@ -63,3 +63,19 @@ curl -X POST http://localhost:8090/checkout \
 
 ### Get All tools
 curl --location 'http://localhost:8090/tools'
+
+
+### Add a new tool
+curl --location 'http://localhost:8090/add' \
+--header 'Content-Type: application/json' \
+--data '{
+        "id": "CHNSTEST",
+        "name": "Chainsaw",
+        "brand": "Stihl-TEST",
+        "charges": {
+            "dailyCharge": 1.99,
+            "weekdayChargeApplicable": true,
+            "weekendChargeApplicable": false,
+            "holidayChargeApplicable": false
+        }
+    },'
