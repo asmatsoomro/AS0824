@@ -2,7 +2,7 @@
 # Rental Tool API Documentation
 
 ## Overview
-The `RentalController` manages rental transactions and tool management within the application. It allows for the checkout of tools, adding new tools to the inventory, and retrieving all available tools.
+The RentalTool manages rental transactions and tool management within the application. It allows for the checkout of tools, adding new tools to the inventory, and retrieving all available tools.
 
 ## Dependencies
 - Spring Boot (Web, Data JPA)
